@@ -1,0 +1,77 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #F7E7CE; /* Desired background color */
+}
+
+/* Curtain Image */
+#curtain {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute; /* Layering */
+  top: -2000px; /* Push the image up by 2000px */
+  left: 0;
+  z-index: -1; /* Send it behind the content */
+  clip-path: inset(2000px 0 0 0); /* Crop 2000px from the top */
+}
+
+/* Heading and Buttons Container */
+#heading {
+  position: relative; /* To layer content on top of the curtain */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center */
+  justify-content: center; /* Vertically center */
+  height: 90vh; /* Adjust to ensure the entire curtain fits */
+  text-align: center;
+  color: #4A4A4A; /* Darker color for better contrast */
+  z-index: 1; /* Place above the image */
+}
+
+/* Heading Text */
+#heading h1 {
+  font-size: 20rem; /* Larger text for better visibility */
+  font-weight: bold;
+  margin-bottom: 30px; /* Space below the heading */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for better visibility */
+}
+
+/* Buttons Container */
+#language-toggle {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+}
+
+/* Buttons */
+#language-toggle button {
+  padding: 15px 25px; /* Larger padding for bigger buttons */
+  font-size: 1.5rem; /* Increased font size for better visibility */
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #D4AF37; /* Muted gold color */
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+#language-toggle button:hover {
+  background-color: #C5A880; /* Slightly darker gold on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #heading h1 {
+      font-size: 3rem; /* Larger font for smaller screens for visibility */
+  }
+
+  #language-toggle button {
+      padding: 12px 20px; /* Adjust button size for mobile */
+      font-size: 1.2rem; /* Slightly larger text on mobile */
+  }
+}
