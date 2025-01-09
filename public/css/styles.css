@@ -32,6 +32,23 @@ body, html {
   pointer-events: none; /* Prevent curtain from blocking interactions */
 }
 
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+  #curtain {
+    height: 120%; /* Slightly increase height for mobile to ensure full coverage */
+    object-fit: cover; /* Maintain aspect ratio */
+    background-position: center; /* Keep it centered */
+  }
+
+  #heading {
+    height: 50vh; /* Reduce heading height for mobile screens */
+  }
+
+  #heading h1 {
+    font-size: 2.5rem; /* Smaller heading text on mobile */
+  }
+}
+
 /* Heading Text */
 #heading h1 {
   font-size: 5rem; /* Large font size for the main title */
