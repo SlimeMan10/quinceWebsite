@@ -35,17 +35,18 @@ body, html {
 /* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
   #curtain {
-    height: 120%; /* Slightly increase height for mobile to ensure full coverage */
-    object-fit: cover; /* Maintain aspect ratio */
-    background-position: center; /* Keep it centered */
-  }
-
-  #heading {
-    height: 50vh; /* Reduce heading height for mobile screens */
+    width: 100vw; /* Ensure full width for mobile */
+    height: 100vh; /* Full height for mobile */
+    object-fit: cover; /* Keep proportions */
   }
 
   #heading h1 {
-    font-size: 2.5rem; /* Smaller heading text on mobile */
+    font-size: 4rem; /* Adjust heading size for smaller screens */
+  }
+
+  #language-toggle button {
+    padding: 12px 20px; /* Adjust button size for mobile */
+    font-size: 1.2rem; /* Slightly smaller font size for mobile */
   }
 }
 
