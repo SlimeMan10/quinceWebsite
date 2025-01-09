@@ -4,37 +4,123 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samaras Quince</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="scss/eventStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="index.js"></script>
 </head>
 <body>
     <header>
-      <!--img here of a curtain that makes everything else push down-->
-      <div id="heading">
-        <img src="curtain.svg" alt="curtains" id="curtain">
-        <h1>Samaras Quince</h1>
-        <div id="language-toggle">
-          <button id="english">English</button>
-          <button id="spanish">Espanol</button>
+        <div id="heading">
+            <img src="curtain.svg" alt="curtains" id="curtain">
+            <h1 class="english-text">Samaras Quince</h1>
+            <h1 class="spanish-text hidden-text">Los Quince de Samara</h1>
+            <div id="language-toggle">
+                <button id="english">English</button>
+                <button id="spanish">Español</button>
+            </div>
         </div>
-      </div>
     </header>
     <main>
-      <div id="party">
-        <div id="samara-photo">
-          <img src="https://media1.giphy.com/media/zODuwJyCtHFO68eBsr/giphy.gif?cid=6c09b952aekvzjxel69l3aceamme46jlgmgugd3btbudpjjx&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+      <h2 class="english-text">Party Information</h2>
+          <h2 class="spanish-text hidden-text">Información de la Fiesta</h2>
+        <div id="party">
+            <div id="samara-photo">
+                <img src="https://media1.giphy.com/media/zODuwJyCtHFO68eBsr/giphy.gif?cid=6c09b952aekvzjxel69l3aceamme46jlgmgugd3btbudpjjx&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+            </div>
+            <div id="party-info">
+                <p class="english-text">Join Us To Celebrate Samara's Quince</p>
+                <p class="spanish-text hidden-text">Únete a nosotros para celebrar los Quince de Samara</p>
+                <br>
+                <p><b class="english-text">When:</b> 12/12/2021</p>
+                <p><b class="spanish-text hidden-text">Cuándo:</b> 12/12/2021</p>
+                <br>
+                <p><b class="english-text">Where:</b> 123 ABC Street</p>
+                <p><b class="spanish-text hidden-text">Dónde:</b> Calle ABC 123</p>
+            </div>
         </div>
-        <div id="party-info">
-          <p>Join Us To Celebrate Samras Quince</p>
-          <br>
-          <p><b>When:</b> 12/12/2021</p>
-          <br>
-          <p><b>Where:</b> 123 ABC Street</p>
+        <div id="itinerary">
+            <h2 class="english-text">Samara's Quince Timeline</h2>
+            <h2 class="spanish-text hidden-text">Cronograma de los Quince de Samara</h2>
+            <div class="timeline">
+                <!-- Event 1 -->
+                <div class="timeline__event animate__animated animate__fadeInUp animate__delay-3s timeline__event--type1">
+                    <div class="timeline__event__icon">
+                        <i class="lni-cake"></i>
+                    </div>
+                    <div class="timeline__event__date english-text">10:00 AM</div>
+                    <div class="timeline__event__content">
+                        <div class="timeline__event__title english-text">Ceremony</div>
+                        <div class="timeline__event__title spanish-text hidden-text">Ceremonia</div>
+                        <div class="timeline__event__description">
+                            <p class="english-text">The quinceañera ceremony will take place at St. Mary's Church.</p>
+                            <p class="spanish-text hidden-text">La ceremonia de quinceañera tendrá lugar en la Iglesia St. Mary's.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="timeline__event animate__animated animate__fadeInUp animate__delay-2s timeline__event--type2">
+                    <div class="timeline__event__icon">
+                        <i class="lni-burger"></i>
+                    </div>
+                    <div class="timeline__event__date english-text">12:00 PM</div>
+                    <div class="timeline__event__content">
+                        <div class="timeline__event__title english-text">Lunch Reception</div>
+                        <div class="timeline__event__title spanish-text hidden-text">Recepción de Almuerzo</div>
+                        <div class="timeline__event__description">
+                            <p class="english-text">A delicious lunch will be served at the banquet hall. Don’t forget to try the signature dishes!</p>
+                            <p class="spanish-text hidden-text">Se servirá un delicioso almuerzo en el salón de banquetes. ¡No olvides probar los platos especiales!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="timeline__event animate__animated animate__fadeInUp animate__delay-1s timeline__event--type3">
+                    <div class="timeline__event__icon">
+                        <i class="lni-dance"></i>
+                    </div>
+                    <div class="timeline__event__date english-text">3:00 PM</div>
+                    <div class="timeline__event__content">
+                        <div class="timeline__event__title english-text">Traditional Dance</div>
+                        <div class="timeline__event__title spanish-text hidden-text">Baile Tradicional</div>
+                        <div class="timeline__event__description">
+                            <p class="english-text">Samara will perform the traditional quinceañera waltz with her court of honor.</p>
+                            <p class="spanish-text hidden-text">Samara realizará el vals tradicional de quinceañera con su corte de honor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="timeline__event animate__animated animate__fadeInUp animate__delay-0s timeline__event--type1">
+                    <div class="timeline__event__icon">
+                        <i class="lni-music"></i>
+                    </div>
+                    <div class="timeline__event__date english-text">6:00 PM</div>
+                    <div class="timeline__event__content">
+                        <div class="timeline__event__title english-text">Dinner & Dance</div>
+                        <div class="timeline__event__title spanish-text hidden-text">Cena y Baile</div>
+                        <div class="timeline__event__description">
+                            <p class="english-text">Enjoy a grand dinner and dance the night away with family and friends!</p>
+                            <p class="spanish-text hidden-text">¡Disfruta de una gran cena y baila toda la noche con familiares y amigos!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </main>
     <footer>
-      <!--maybe admin login if my going to implement RSVP DB-->
+        <h2 class="english-text">Time Left Until The Quince</h2>
+        <h2 class="spanish-text hidden-text">Tiempo Restante Para Los Quince</h2>
+        <div id="timer-wrapper">
+          <h3 id="timer">Loading...</h3>
+        </div>
+        <!--
+        <div id="contact">
+          <h2 class="english-text">Contact</h2>
+          <h2 class="spanish-text hidden-text">Contacto</h2>
+          !-->
+        </div>
     </footer>
 </body>
 </html>
