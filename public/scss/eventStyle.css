@@ -14,11 +14,11 @@
   margin-bottom: 20px;
   position: relative;
   display: flex;
-  flex-direction: column; /* Stack vertically by default */
+  flex-direction: column; /* Default to stack vertically */
   margin: 20px 0;
   border-radius: 6px;
   align-self: center;
-  width: 90%; /* Wider for consistency */
+  width: 90%; /* Full width on mobile */
 }
 
 /* Title styling */
@@ -37,7 +37,7 @@
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
   background: #fff;
   border-radius: 6px;
-  width: 100%; /* Full width */
+  width: 100%; /* Full width on mobile */
   margin-top: 10px; /* Add spacing below the date */
 }
 
@@ -52,7 +52,7 @@
   justify-content: center;
   padding: 10px;
   border-radius: 6px;
-  width: 100%; /* Full width */
+  width: 100%; /* Full width on mobile */
   text-align: center;
 }
 
@@ -72,7 +72,25 @@
   color: #24b47e;
 }
 
-/* Responsive Design for Phones */
+/* Responsive Design */
+@media (min-width: 787px) {
+  #itinerary .timeline__event {
+    flex-direction: row; /* Side-by-side layout for larger screens */
+    width: 50vw; /* Adjust width for PC */
+  }
+
+  #itinerary .timeline__event__date {
+    width: auto; /* Adjust date width */
+    border-radius: 6px 0 0 6px; /* Rounded corners for PC */
+    margin-right: 10px; /* Add spacing to the right of the date */
+  }
+
+  #itinerary .timeline__event__content {
+    width: calc(100% - 140px); /* Reduce width to accommodate date box */
+    margin-top: 0; /* Remove extra margin */
+  }
+}
+
 @media (max-width: 786px) {
   #itinerary .timeline__event {
     width: 90%; /* Adjust width for mobile */
@@ -86,5 +104,7 @@
 
   #itinerary .timeline__event__date {
     width: 100%; /* Full width for date */
+    border-radius: 6px; /* Rounded corners for mobile */
+    margin-bottom: 10px; /* Add spacing below the date */
   }
 }
