@@ -14,13 +14,14 @@
   margin-bottom: 20px;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Stack vertically by default */
   margin: 20px 0;
   border-radius: 6px;
   align-self: center;
-  width: 50vw;
+  width: 90%; /* Wider for consistency */
 }
 
+/* Title styling */
 #itinerary .timeline__event__title {
   font-size: 1.2rem;
   line-height: 1.4;
@@ -30,30 +31,33 @@
   letter-spacing: 1.5px;
 }
 
+/* Content box styling */
 #itinerary .timeline__event__content {
   padding: 20px;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
   background: #fff;
-  width: 100%; /* Full width on small screens */
   border-radius: 6px;
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Add spacing below the date */
 }
 
+/* Date box styling */
 #itinerary .timeline__event__date {
-  color: #f6a4ec;
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
-  background: #9251ac;
+  background: #9251ac; /* Default purple */
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  padding: 0 20px;
-  border-radius: 6px 6px 0 0;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%; /* Full width */
+  text-align: center;
 }
 
 #itinerary .timeline__event--type2 .timeline__event__date {
-  color: #87bbfe;
-  background: #555ac0;
+  background: #555ac0; /* Blue */
 }
 
 #itinerary .timeline__event--type2 .timeline__event__title {
@@ -61,8 +65,7 @@
 }
 
 #itinerary .timeline__event--type3 .timeline__event__date {
-  color: #aff1b6;
-  background-color: #24b47e;
+  background-color: #24b47e; /* Green */
 }
 
 #itinerary .timeline__event--type3 .timeline__event__title {
@@ -72,9 +75,8 @@
 /* Responsive Design for Phones */
 @media (max-width: 786px) {
   #itinerary .timeline__event {
-    flex-direction: column; /* Stack content vertically */
-    align-self: center;
-    width: 70%; /* Use most of the screen width */
+    width: 90%; /* Adjust width for mobile */
+    margin: 10px auto; /* Center align */
   }
 
   #itinerary .timeline__event__content {
@@ -83,7 +85,6 @@
   }
 
   #itinerary .timeline__event__date {
-    border-radius: 6px; /* Rounded corners for date */
-    margin-bottom: 10px; /* Add spacing below the date */
+    width: 100%; /* Full width for date */
   }
 }
