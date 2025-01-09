@@ -51,10 +51,6 @@
   border-radius: 6px 6px 0 0;
 }
 
-#itinerary .timeline__event__icon {
-  display: none; /* Hide the icon for simplicity on smaller screens */
-}
-
 #itinerary .timeline__event--type2 .timeline__event__date {
   color: #87bbfe;
   background: #555ac0;
@@ -78,7 +74,7 @@
   #itinerary .timeline__event {
     flex-direction: column; /* Stack content vertically */
     align-self: center;
-    width: 90%; /* Use most of the screen width */
+    width: 70%; /* Use most of the screen width */
   }
 
   #itinerary .timeline__event__content {
@@ -90,8 +86,4 @@
     border-radius: 6px; /* Rounded corners for date */
     margin-bottom: 10px; /* Add spacing below the date */
   }
-}
-
-#itinerary .timeline__event__icon {
-  display: none; /* Remove the square icon */
 }
