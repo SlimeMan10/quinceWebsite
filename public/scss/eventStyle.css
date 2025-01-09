@@ -14,22 +14,11 @@
   margin-bottom: 20px;
   position: relative;
   display: flex;
+  flex-direction: row;
   margin: 20px 0;
   border-radius: 6px;
   align-self: center;
   width: 50vw;
-}
-
-#itinerary .timeline__event:nth-child(2n+1) {
-  flex-direction: row-reverse;
-}
-
-#itinerary .timeline__event:nth-child(2n+1) .timeline__event__date {
-  border-radius: 0 6px 6px 0;
-}
-
-#itinerary .timeline__event:nth-child(2n+1) .timeline__event__content {
-  border-radius: 6px 0 0 6px;
 }
 
 #itinerary .timeline__event__title {
@@ -45,8 +34,8 @@
   padding: 20px;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
   background: #fff;
-  width: calc(40vw - 84px);
-  border-radius: 0 6px 6px 0;
+  width: 100%; /* Full width on small screens */
+  border-radius: 6px;
 }
 
 #itinerary .timeline__event__date {
@@ -59,38 +48,16 @@
   justify-content: center;
   white-space: nowrap;
   padding: 0 20px;
-  border-radius: 6px 0 0 6px;
+  border-radius: 6px 6px 0 0;
 }
 
 #itinerary .timeline__event__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9251ac;
-  padding: 20px;
-  align-self: center;
-  margin: 0 20px;
-  background: #f6a4ec;
-  border-radius: 100%;
-  width: 40px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-  padding: 40px;
-  height: 40px;
-  position: relative;
-}
-
-#itinerary .timeline__event__icon i {
-  font-size: 32px;
+  display: none; /* Hide the icon for simplicity on smaller screens */
 }
 
 #itinerary .timeline__event--type2 .timeline__event__date {
   color: #87bbfe;
   background: #555ac0;
-}
-
-#itinerary .timeline__event--type2 .timeline__event__icon {
-  background: #87bbfe;
-  color: #555ac0;
 }
 
 #itinerary .timeline__event--type2 .timeline__event__title {
@@ -102,31 +69,29 @@
   background-color: #24b47e;
 }
 
-#itinerary .timeline__event--type3 .timeline__event__icon {
-  background: #aff1b6;
-  color: #24b47e;
-}
-
 #itinerary .timeline__event--type3 .timeline__event__title {
   color: #24b47e;
 }
 
+/* Responsive Design for Phones */
 @media (max-width: 786px) {
   #itinerary .timeline__event {
-    flex-direction: column;
+    flex-direction: column; /* Stack content vertically */
     align-self: center;
+    width: 90%; /* Use most of the screen width */
   }
+
   #itinerary .timeline__event__content {
-    width: 100%;
+    width: 100%; /* Full width for content */
+    margin: 0 auto; /* Center the content */
   }
-  #itinerary .timeline__event__icon {
-    border-radius: 6px 6px 0 0;
-    width: 100%;
-    margin: 0;
-    box-shadow: none;
-  }
+
   #itinerary .timeline__event__date {
-    border-radius: 0;
-    padding: 20px;
+    border-radius: 6px; /* Rounded corners for date */
+    margin-bottom: 10px; /* Add spacing below the date */
   }
+}
+
+#itinerary .timeline__event__icon {
+  display: none; /* Remove the square icon */
 }
