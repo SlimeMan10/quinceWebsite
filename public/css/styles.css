@@ -32,21 +32,83 @@ body, html {
   pointer-events: none; /* Prevent curtain from blocking interactions */
 }
 
-/* Responsive Design for Mobile Screens */
+/* Mobile-Specific Adjustments */
 @media (max-width: 768px) {
+  /* Curtain Image */
   #curtain {
-    width: 100vw; /* Ensure full width for mobile */
-    height: 100vh; /* Full height for mobile */
-    object-fit: cover; /* Keep proportions */
+    position: absolute; /* Place it behind the content */
+    top: 0; /* Align to the top of the viewport */
+    left: 0;
+    width: 100%; /* Span full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure proper scaling */
+    z-index: 1; /* Keep behind other elements */
   }
 
+  /* Heading and Buttons Container */
+  #heading {
+    position: relative; /* Allow positioning */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 60vh; /* Ensure it fits within the curtain */
+    text-align: center; /* Center text */
+    z-index: 10; /* Ensure it's above the curtain */
+    margin-top: 0; /* Start at the top */
+  }
+
+  /* Heading Text */
   #heading h1 {
-    font-size: 4rem; /* Adjust heading size for smaller screens */
+    font-size: 3rem; /* Adjust for smaller screens */
+    font-weight: bold;
+    margin: 0; /* Remove default margins */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    z-index: 10; /* Ensure it's above the curtain */
   }
 
-  #language-toggle button {
-    padding: 12px 20px; /* Adjust button size for mobile */
-    font-size: 1.2rem; /* Slightly smaller font size for mobile */
+  /* Language Toggle Buttons */
+  #language-toggle {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Add spacing above buttons */
+    z-index: 10; /* Keep above the curtain */
+  }
+
+  /* Party Information Section */
+  #party {
+    margin-top: -30px; /* Move closer to the heading */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    padding: 20px; /* Add padding around the section */
+    gap: 10px; /* Add spacing between elements */
+  }
+
+  #samara-photo img {
+    max-width: 300px; /* Limit image size */
+    width: 100%; /* Scale properly */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  #party-info {
+    text-align: center; /* Center text */
+    font-size: 1.1rem; /* Adjust font size for readability */
+    color: #4A4A4A; /* Neutral dark text color */
+  }
+
+  /* Party Heading */
+  h2 {
+    text-align: center; /* Center align headings */
+    font-size: 2rem; /* Adjust heading size */
+    font-weight: bold; /* Make bold for emphasis */
+    margin: 10px 0; /* Add spacing around headings */
+    color: #333; /* Darker text for contrast */
+    border-bottom: 2px solid #D4AF37; /* Gold bottom border */
+    padding-bottom: 5px; /* Add padding below text */
   }
 }
 
