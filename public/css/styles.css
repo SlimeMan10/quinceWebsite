@@ -225,3 +225,47 @@ h2 {
   height: 100%; /* Ensure the wrapper spans full height */
   margin: 20px 0; /* Add some vertical margin for spacing */
 }
+
+/*fix to party info on mobile*/
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  /* Party Section */
+  #party {
+    margin-top: -30px; /* Adjust spacing above */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 20px; /* Add padding around the section */
+    gap: 20px; /* Add spacing between elements */
+  }
+
+  /* Image Styling */
+  #samara-photo img {
+    max-width: 300px; /* Limit image size */
+    width: 100%; /* Scale properly */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  /* Party Info Text */
+  #party-info {
+    text-align: left; /* Align text to the left */
+    font-size: 1.1rem; /* Adjust font size for readability */
+    color: #4A4A4A; /* Neutral dark text color */
+    width: 90%; /* Ensure it spans most of the container */
+  }
+
+  /* Headings */
+  h2 {
+    text-align: center; /* Center-align headings */
+    font-size: 2rem; /* Adjust heading size */
+    font-weight: bold; /* Emphasize headings */
+    margin: 10px 0; /* Add spacing around headings */
+    color: #333; /* Darker color for contrast */
+    border-bottom: 2px solid #D4AF37; /* Gold bottom border */
+    padding-bottom: 5px; /* Add padding below the text */
+  }
+}
