@@ -266,7 +266,7 @@ const App = () => {
   useEffect(() => {
     // Create audio element
     const audio = document.createElement('audio');
-    audio.src = "/from-the-start.mp3";
+    audio.src = "/ゲンダイ.mp3";
     audio.loop = true;
     audio.volume = 0.5;
     audioRef.current = audio;
@@ -283,8 +283,8 @@ const App = () => {
         nowPlaying.className = 'now-playing';
         nowPlaying.innerHTML = `
           <div class="song-info">
-            <div class="song-title">From the Start</div>
-            <div class="song-artist">Laufey</div>
+            <div class="song-title">ゲンダイ</div>
+            <div class="song-artist">フレネシ</div>
           </div>
         `;
         musicControls.prepend(nowPlaying);
