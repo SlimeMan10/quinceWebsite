@@ -262,11 +262,11 @@ const App = () => {
     }
   }, []);
   
-  // Setup audio
+  // In your audio setup useEffect
   useEffect(() => {
     // Create audio element
     const audio = document.createElement('audio');
-    audio.src = "https://cdn.freesound.org/previews/669/669707_5674468-lq.mp3";
+    audio.src = "/from-the-start.mp3";
     audio.loop = true;
     audio.volume = 0.5;
     audioRef.current = audio;
@@ -274,15 +274,21 @@ const App = () => {
     // Create "Now Playing" info
     const musicControls = document.querySelector('.music-controls');
     if (musicControls) {
-      const nowPlaying = document.createElement('div');
-      nowPlaying.className = 'now-playing';
-      nowPlaying.innerHTML = `
-        <div class="song-info">
-          <div class="song-title">From the Start</div>
-          <div class="song-artist">Laufey</div>
-        </div>
-      `;
-      musicControls.prepend(nowPlaying);
+      // Check if the now-playing element already exists
+      const existingNowPlaying = musicControls.querySelector('.now-playing');
+      
+      // Only create a new element if one doesn't already exist
+      if (!existingNowPlaying) {
+        const nowPlaying = document.createElement('div');
+        nowPlaying.className = 'now-playing';
+        nowPlaying.innerHTML = `
+          <div class="song-info">
+            <div class="song-title">From the Start</div>
+            <div class="song-artist">Laufey</div>
+          </div>
+        `;
+        musicControls.prepend(nowPlaying);
+      }
     }
     
     return () => {
@@ -349,6 +355,8 @@ const App = () => {
   };
   
   // Music control
+  // Modify your toggleMusic function in App.jsx:
+  // Music control
   const toggleMusic = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -369,7 +377,7 @@ const App = () => {
     setTimeout(() => {
       setShowMusicStatus(false);
     }, 2000);
-  };
+  }; 
   
   return (
     <>
