@@ -28,10 +28,13 @@ const App = () => {
       scrollText: "Scroll Down",
       aboutTitle: "About the Celebration",
       dateTime: "Date & Time",
-      dateValue: "April 13, 2025 • 4:00 PM",
+      dateValue: "April 13, 2025 • 4:00 PM - 9:00 PM",
       location: "Location",
-      address: "Crystal Ballroom, 123 Celebration Ave, Miami, FL",
+      address: "910 Ninth St SE, Auburn, WA 98002, United States",
       timelineTitle: "Event Timeline",
+      rsvpTitle: "RSVP",
+      rsvpText: "Please let us know if you'll be joining us. The last day to RSVP is April 2.",
+      rsvpButton: "RSVP: 253-232-6375",
       events: [
         {
           time: "4:00 PM",
@@ -61,7 +64,7 @@ const App = () => {
         {
           time: "8:00 PM",
           title: "Dance Party",
-          description: "Music and celebration until midnight"
+          description: "Music and celebration until 9:00 PM"
         }
       ]
     },
@@ -79,10 +82,13 @@ const App = () => {
       scrollText: "Desliza Hacia Abajo",
       aboutTitle: "Sobre la Celebración",
       dateTime: "Fecha y Hora",
-      dateValue: "13 de Abril, 2025 • 4:00 PM",
+      dateValue: "13 de Abril, 2025 • 4:00 PM - 9:00 PM",
       location: "Ubicación",
-      address: "Crystal Ballroom, 123 Celebration Ave, Miami, FL",
+      address: "910 Ninth St SE, Auburn, WA 98002, Estados Unidos",
       timelineTitle: "Cronograma del Evento",
+      rsvpTitle: "RSVP",
+      rsvpText: "Por favor, háganos saber si se unirá a nosotros. El último día para confirmar asistencia es el 2 de abril.",
+      rsvpButton: "RSVP: 253-232-6375",
       events: [
         {
           time: "4:00 PM",
@@ -112,7 +118,7 @@ const App = () => {
         {
           time: "8:00 PM",
           title: "Fiesta de Baile",
-          description: "Música y celebración hasta la medianoche"
+          description: "Música y celebración hasta las 9:00 PM"
         }
       ]
     }
@@ -355,8 +361,6 @@ const App = () => {
   };
   
   // Music control
-  // Modify your toggleMusic function in App.jsx:
-  // Music control
   const toggleMusic = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -378,6 +382,11 @@ const App = () => {
       setShowMusicStatus(false);
     }, 2000);
   }; 
+  
+  // RSVP function
+  const handleRSVP = () => {
+    window.location.href = `tel:2532326375`;
+  };
   
   return (
     <>
@@ -478,6 +487,16 @@ const App = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      
+      <section id="rsvp">
+        <div className="container">
+          <h2 className="title">{text.rsvpTitle}</h2>
+          <p className="rsvp-text">{text.rsvpText}</p>
+          <button className="rsvp-btn" onClick={handleRSVP}>
+            <i className="fas fa-phone-alt"></i> {text.rsvpButton}
+          </button>
         </div>
       </section>
     </>
