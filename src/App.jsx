@@ -34,7 +34,7 @@ const App = () => {
       timelineTitle: "Event Timeline",
       rsvpTitle: "RSVP",
       rsvpText: "Please let us know if you'll be joining us. The last day to RSVP is April 2.",
-      rsvpButton: "RSVP: 253-232-6375",
+      rsvpButton: "Text RSVP: 253-232-6375",
       events: [
         {
           time: "4:00 PM",
@@ -88,7 +88,7 @@ const App = () => {
       timelineTitle: "Cronograma del Evento",
       rsvpTitle: "RSVP",
       rsvpText: "Por favor, háganos saber si se unirá a nosotros. El último día para confirmar asistencia es el 2 de abril.",
-      rsvpButton: "RSVP: 253-232-6375",
+      rsvpButton: "Enviar mensaje RSVP: 253-232-6375",
       events: [
         {
           time: "4:00 PM",
@@ -385,7 +385,7 @@ const App = () => {
   
   // RSVP function
   const handleRSVP = () => {
-    window.location.href = `tel:2532326375`;
+    window.location.href = `sms:2532326375?body=Hello, I would like to RSVP for Samara's Quinceañera on April 13, 2025.`;
   };
   
   return (
@@ -488,6 +488,11 @@ const App = () => {
             ))}
           </div>
         </div>
+        
+        <div className="scroll-indicator" onClick={() => scrollToSection('rsvp')}>
+          <i className="fas fa-chevron-down"></i>
+          <p>{text.scrollText}</p>
+        </div>
       </section>
       
       <section id="rsvp">
@@ -495,7 +500,7 @@ const App = () => {
           <h2 className="title">{text.rsvpTitle}</h2>
           <p className="rsvp-text">{text.rsvpText}</p>
           <button className="rsvp-btn" onClick={handleRSVP}>
-            <i className="fas fa-phone-alt"></i> {text.rsvpButton}
+            <i className="fas fa-comment-alt"></i> {text.rsvpButton}
           </button>
         </div>
       </section>
