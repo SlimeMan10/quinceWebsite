@@ -383,9 +383,13 @@ const App = () => {
     }, 2000);
   }; 
   
-  // RSVP function
-  const handleRSVP = () => {
-    window.location.href = `sms:2532326375?body=Hello, I would like to RSVP for Samara's Quinceañera on April 13, 2025.`;
+  // RSVP function - FIXED to prevent the double-click issue
+  const handleRSVP = (e) => {
+    e.preventDefault(); // Prevent default button behavior
+    e.stopPropagation(); // Stop event propagation
+    
+    // Use window.open instead of window.location.href for more reliable behavior
+    window.open(`sms:2532326375?body=Hello, I would like to RSVP for Samara's Quinceañera on April 13, 2025.`, '_blank');
   };
   
   return (
@@ -447,7 +451,8 @@ const App = () => {
         <div className="container">
           <div className="info-container">
             <div className="photo-container">
-              <img src="/api/placeholder/400/400" alt="Samara" />
+              {/* Updated to use the provided photo path */}
+              <img src="/IMG_4935.JPG" alt="Samara" />
             </div>
             <div className="info-text">
               <h3>{text.aboutTitle}</h3>
@@ -499,7 +504,12 @@ const App = () => {
         <div className="container">
           <h2 className="title">{text.rsvpTitle}</h2>
           <p className="rsvp-text">{text.rsvpText}</p>
-          <button className="rsvp-btn" onClick={handleRSVP}>
+          {/* Fixed RSVP button with improved click handling */}
+          <button 
+            className="rsvp-btn" 
+            onClick={handleRSVP}
+            style={{ cursor: 'pointer' }} // Ensure cursor indicates clickable
+          >
             <i className="fas fa-comment-alt"></i> {text.rsvpButton}
           </button>
         </div>
