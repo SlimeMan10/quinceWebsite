@@ -10,7 +10,8 @@ const App = () => {
   
   const timelineRef = useRef(null);
   const audioRef = useRef(null);
-  const eventDate = new Date('April 13, 2025 16:00:00').getTime();
+  // Setting event date to April 13, 2025 4:00 PM Pacific Time
+  const eventDate = new Date('April 13, 2025 16:00:00 PST').getTime();
   
   // English and Spanish translations
   const translations = {
@@ -42,24 +43,29 @@ const App = () => {
           description: "Welcome drinks and mingling"
         },
         {
-          time: "5:00 PM",
-          title: "Grand Entrance",
-          description: "Formal introduction of Samara and her court"
+          time: "4:20 PM",
+          title: "Prayer",
+          description: "Special prayer ceremony"
         },
         {
-          time: "5:30 PM",
-          title: "Father-Daughter Dance",
-          description: "A special moment between Samara and her father"
-        },
-        {
-          time: "6:00 PM",
+          time: "4:40 PM",
           title: "Dinner Service",
           description: "Formal dinner and refreshments"
         },
         {
-          time: "7:30 PM",
+          time: "6:00 PM",
+          title: "Family Dance & Surprise Dance",
+          description: "Special choreographed performances"
+        },
+        {
+          time: "6:50 PM",
           title: "Cutting of the Cake",
           description: "Celebration with dessert and toasts"
+        },
+        {
+          time: "7:00 PM",
+          title: "Mariachi",
+          description: "Traditional mariachi music performance"
         },
         {
           time: "8:00 PM",
@@ -96,24 +102,29 @@ const App = () => {
           description: "Bebidas de bienvenida y socialización"
         },
         {
-          time: "5:00 PM",
-          title: "Gran Entrada",
-          description: "Presentación formal de Samara y su corte"
+          time: "4:20 PM",
+          title: "Oración",
+          description: "Ceremonia especial de oración"
         },
         {
-          time: "5:30 PM",
-          title: "Baile Padre-Hija",
-          description: "Un momento especial entre Samara y su padre"
-        },
-        {
-          time: "6:00 PM",
+          time: "4:40 PM",
           title: "Servicio de Cena",
           description: "Cena formal y refrescos"
         },
         {
-          time: "7:30 PM",
+          time: "6:00 PM",
+          title: "Baile Familiar y Baile Sorpresa",
+          description: "Presentaciones coreografiadas especiales"
+        },
+        {
+          time: "6:50 PM",
           title: "Corte del Pastel",
           description: "Celebración con postre y brindis"
+        },
+        {
+          time: "7:00 PM",
+          title: "Mariachi",
+          description: "Presentación de música tradicional de mariachi"
         },
         {
           time: "8:00 PM",
